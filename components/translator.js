@@ -12,21 +12,21 @@ class Translator {
 		for (let i = 0; i < words.length; i++) {
 			const word = words[i];
 			if (americanOnly[word]) {
-				words[i] = `<span class='highlight'>${americanOnly[word]}</span>`;
+				words[i] = `<span class="highlight">${americanOnly[word]}</span>`;
 				modified = true;
 			}
 			else if (americanToBritishSpelling[word]) {
-				words[i] = `<span class='highlight'>${americanToBritishSpelling[word]}</span>`;
+				words[i] = `<span class="highlight">${americanToBritishSpelling[word]}</span>`;
 				modified = true;
 			}
 			else if (americanToBritishTitles[word]) {
-				words[i] = `<span class='highlight'>${americanToBritishTitles[word]}</span>`;
+				words[i] = `<span class="highlight">${americanToBritishTitles[word]}</span>`;
 				modified = true;
 			}
 		}
 		let translation = words.join(" ");
 		if (translation.match(/(\d\d)(?::)(\d\d)/g)) {
-			translation = translation.replace(/(\d\d)(?::)(\d\d)/g, "<span class='highlight'>$1.$2</span >")
+			translation = translation.replace(/(\d\d)(?::)(\d\d)/g, '<span class="highlight">$1.$2</span >')
 			modified = true;
 		}
 		if (modified) return { text, translation }
@@ -38,21 +38,21 @@ class Translator {
 		for (let i = 0; i < words.length; i++) {
 			const word = words[i];
 			if (britishOnly[word]) {
-				words[i] = `<span class='highlight'>${britishOnly[word]}</span>`;
+				words[i] = `<span class="highlight">${britishOnly[word]}</span>`;
 				modified = true;
 			}
 			else if (britishToAmericanSpelling[word]) {
-				words[i] = `<span class='highlight'>${britishToAmericanSpelling[word]}</span>`;
+				words[i] = `<span class="highlight">${britishToAmericanSpelling[word]}</span>`;
 				modified = true;
 			}
 			else if (britishToAmericanTitles[word]) {
-				words[i] = `<span class='highlight'>${britishToAmericanTitles[word]}</span>`;
+				words[i] = `<span class="highlight">${britishToAmericanTitles[word]}</span>`;
 				modified = true;
 			}
 		}
 		let translation = words.join(" ");
 		if (translation.match(/(\d\d)(?:.)(\d\d)/g)) {
-			translation = translation.replace(/(\d\d)(?:.)(\d\d)/g, "<span class='highlight'>$1:$2</span >")
+			translation = translation.replace(/(\d\d)(?:.)(\d\d)/g, '<span class="highlight">$1:$2</span >')
 			modified = true;
 		}
 		if (modified) return { text, translation }
