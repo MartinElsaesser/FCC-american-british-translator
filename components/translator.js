@@ -16,11 +16,11 @@ class Translator {
 				modified = true;
 			}
 			else if (americanToBritishSpelling[word]) {
-				words[i] = `<span class='highlight'>${americanToBritishSpelling[word]}</span>`;;
+				words[i] = `<span class='highlight'>${americanToBritishSpelling[word]}</span>`;
 				modified = true;
 			}
 			else if (americanToBritishTitles[word]) {
-				words[i] = `<span class='highlight'>${americanToBritishTitles[word]}</span>`;;
+				words[i] = `<span class='highlight'>${americanToBritishTitles[word]}</span>`;
 				modified = true;
 			}
 		}
@@ -42,11 +42,11 @@ class Translator {
 				modified = true;
 			}
 			else if (britishToAmericanSpelling[word]) {
-				words[i] = `<span class='highlight'>${britishToAmericanSpelling[word]}</span>`;;
+				words[i] = `<span class='highlight'>${britishToAmericanSpelling[word]}</span>`;
 				modified = true;
 			}
 			else if (britishToAmericanTitles[word]) {
-				words[i] = `<span class='highlight'>${britishToAmericanTitles[word]}</span>`;;
+				words[i] = `<span class='highlight'>${britishToAmericanTitles[word]}</span>`;
 				modified = true;
 			}
 		}
