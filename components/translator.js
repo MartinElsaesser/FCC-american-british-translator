@@ -26,7 +26,7 @@ class Translator {
 		}
 		let translation = words.join(" ");
 		if (translation.match(/(\d\d)(?::)(\d\d)/g)) {
-			translation = translation.replace(/(\d\d)(?::)(\d\d)/g, "$1.$2")
+			translation = translation.replace(/(\d\d)(?::)(\d\d)/g, "<span class='highlight'>$1.$2</span >")
 			modified = true;
 		}
 		if (modified) return { text, translation }
@@ -52,7 +52,7 @@ class Translator {
 		}
 		let translation = words.join(" ");
 		if (translation.match(/(\d\d)(?:.)(\d\d)/g)) {
-			translation = translation.replace(/(\d\d)(?:.)(\d\d)/g, "$1:$2")
+			translation = translation.replace(/(\d\d)(?:.)(\d\d)/g, "<span class='highlight'>$1:$2</span >")
 			modified = true;
 		}
 		if (modified) return { text, translation }
