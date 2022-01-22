@@ -3,11 +3,23 @@
 const Translator = require('../components/translator.js');
 
 module.exports = function (app) {
-  
-  const translator = new Translator();
 
-  app.route('/api/translate')
-    .post((req, res) => {
-      
-    });
+	const translator = new Translator();
+
+	app.route('/api/translate')
+		.post((req, res) => {
+			const { text, locale } = req.body;
+			if (!locale) return res.json({ error: 'Required field(s) missing' });
+			if (req.body.text === undefined || req.body.text === "") {
+				return res.json({ error: "No text to translate" });
+			}
+			if (locale === "american-to-british") {
+				return res.json(translator.americanToBritish(text));
+			}
+			else if (locale === "british-to-american") {
+				return res.json(translator.britishToAmerican(text));
+			} else {
+				return res.json({ error: "Invalid value for locale field" });
+			}
+		});
 };
