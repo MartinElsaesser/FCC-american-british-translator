@@ -19,14 +19,18 @@ class Translator {
 				words[i] = `<span class="highlight">${americanToBritishSpelling[word]}</span>`;
 				modified = true;
 			}
-			else if (americanToBritishTitles[word]) {
-				words[i] = `<span class="highlight">${americanToBritishTitles[word]}</span>`;
-				modified = true;
-			}
+			// else if (americanToBritishTitles[word]) {
+			// 	words[i] = `<span class="highlight">${americanToBritishTitles[word]}</span>`;
+			// 	modified = true;
+			// }
 		}
 		let translation = words.join(" ");
-		if (translation.match(/(\d\d)(?::)(\d\d)/g)) {
+		if (translation.match(/(\d\d)(?::)(\d\d)/)) {
 			translation = translation.replace(/(\d\d)(?::)(\d\d)/g, '<span class="highlight">$1.$2</span >')
+			modified = true;
+		}
+		if (translation.match(/(mr.|mrs.|ms.|mx.|dr.|prof.)/i)) {
+			translation = translation.replace(/(mr|mrs|ms|mx|dr|prof)./gi, '<span class="highlight">$1</span >')
 			modified = true;
 		}
 		if (modified) return { text, translation }
@@ -45,14 +49,14 @@ class Translator {
 				words[i] = `<span class="highlight">${britishToAmericanSpelling[word]}</span>`;
 				modified = true;
 			}
-			else if (britishToAmericanTitles[word]) {
-				words[i] = `<span class="highlight">${britishToAmericanTitles[word]}</span>`;
-				modified = true;
-			}
 		}
 		let translation = words.join(" ");
 		if (translation.match(/(\d\d)(?:.)(\d\d)/g)) {
 			translation = translation.replace(/(\d\d)(?:.)(\d\d)/g, '<span class="highlight">$1:$2</span >')
+			modified = true;
+		}
+		if (translation.match(/(mr|mrs|ms|mx|dr|prof)/i)) {
+			translation = translation.replace(/(mr|mrs|ms|mx|dr|prof)/gi, '<span class="highlight">$1.</span >')
 			modified = true;
 		}
 		if (modified) return { text, translation }
