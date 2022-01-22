@@ -24,11 +24,11 @@ class Translator {
 		}
 		let translation = words.join(" ");
 		if (translation.match(/(\d\d)(?::)(\d\d)/)) {
-			translation = translation.replace(/(\d\d)(?::)(\d\d)/g, '<span class="highlight">$1.$2</span >')
+			translation = translation.replace(/(\d\d)(?::)(\d\d)/g, '<span class="highlight">$1.$2</span>')
 			modified = true;
 		}
 		if (translation.match(/(mr.|mrs.|ms.|mx.|dr.|prof.)/i)) {
-			translation = translation.replace(/(mr|mrs|ms|mx|dr|prof)./gi, '<span class="highlight">$1</span >')
+			translation = translation.replace(/(mr|mrs|ms|mx|dr|prof)./gi, '<span class="highlight">$1</span>')
 			modified = true;
 		}
 		if (modified) return { text, translation }
@@ -50,11 +50,11 @@ class Translator {
 		}
 		let translation = words.join(" ");
 		if (translation.match(/(\d\d)(?:.)(\d\d)/g)) {
-			translation = translation.replace(/(\d\d)(?:.)(\d\d)/g, '<span class="highlight">$1:$2</span >')
+			translation = translation.replace(/(\d\d)(?:.)(\d\d)/g, '<span class="highlight">$1:$2</span>')
 			modified = true;
 		}
 		if (translation.match(/(mr|mrs|ms|mx|dr|prof)/i)) {
-			translation = translation.replace(/(mr|mrs|ms|mx|dr|prof)/gi, '<span class="highlight">$1.</span >')
+			translation = translation.replace(/(mr|mrs|ms|mx|dr|prof)/gi, '<span class="highlight">$1.</span>')
 			modified = true;
 		}
 		if (modified) return { text, translation }
