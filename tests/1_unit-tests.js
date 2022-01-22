@@ -13,7 +13,7 @@ suite("Unit Tests", () => {
 			let valid = {
 				text: "Mangoes are my favorite fruit.",
 				translation:
-					"Mangoes are my <span class='highlight'>favourite</span> fruit.",
+					"Mangoes are my <span class=\"highlight\">favourite</span> fruit.",
 			};
 			assert.deepEqual(response, valid, "working translation");
 		});
@@ -24,7 +24,7 @@ suite("Unit Tests", () => {
 			let valid = {
 				text: "I ate yogurt for breakfast.",
 				translation:
-					"I ate <span class='highlight'>yoghurt</span> for breakfast.",
+					"I ate <span class=\"highlight\">yoghurt</span> for breakfast.",
 			};
 			assert.deepEqual(response, valid, "working translation");
 		});
@@ -45,7 +45,7 @@ suite("Unit Tests", () => {
 			let valid = {
 				text: "Can you toss this in the trashcan for me?",
 				translation:
-					"Can you toss this in the <span class='highlight'>bin</span> for me?",
+					"Can you toss this in the <span class=\"highlight\">bin</span> for me?",
 			};
 			assert.deepEqual(response, valid, "working translation");
 		});
@@ -83,7 +83,7 @@ suite("Unit Tests", () => {
 			);
 			let valid = {
 				text: "No Mr. Bond, I expect you to die.",
-				translation: "Everything looks good to me!",
+				translation: "No <span class=\"highlight\">Mr</span> Bond, I expect you to die.",
 			};
 			assert.deepEqual(response, valid, "working translation");
 		});
@@ -93,7 +93,7 @@ suite("Unit Tests", () => {
 			);
 			let valid = {
 				text: "Dr. Grosh will see you now.",
-				translation: "Everything looks good to me!",
+				translation: "<span class=\"highlight\">Dr</span> Grosh will see you now.",
 			};
 			assert.deepEqual(response, valid, "working translation");
 		});
@@ -101,7 +101,7 @@ suite("Unit Tests", () => {
 			let response = translator.americanToBritish("Lunch is at 12:15 today.");
 			let valid = {
 				text: "Lunch is at 12:15 today.",
-				translation: "Lunch is at 12.15 today.",
+				translation: "Lunch is at <span class=\"highlight\">12.15</span> today.",
 			};
 			assert.deepEqual(response, valid, "working translation");
 		});
@@ -114,7 +114,7 @@ suite("Unit Tests", () => {
 			let valid = {
 				text: "We watched the footie match for a while.",
 				translation:
-					"We watched the <span class='highlight'>soccer</span> match for a while.",
+					"We watched the <span class=\"highlight\">soccer</span> match for a while.",
 			};
 			assert.deepEqual(response, valid, "working translation");
 		});
@@ -135,7 +135,7 @@ suite("Unit Tests", () => {
 			let valid = {
 				text: "First, caramelise the onions.",
 				translation:
-					"First, <span class='highlight'>caramelize</span> the onions.",
+					"First, <span class=\"highlight\">caramelize</span> the onions.",
 			};
 			assert.deepEqual(response, valid, "working translation");
 		});
@@ -156,7 +156,7 @@ suite("Unit Tests", () => {
 			let valid = {
 				text: "I had a bicky then went to the chippy.",
 				translation:
-					"I had a <span class='highlight'>cookie</span> then went to the chippy.",
+					"I had a <span class=\"highlight\">cookie</span> then went to the chippy.",
 			};
 			assert.deepEqual(response, valid, "working translation");
 		});
@@ -184,7 +184,7 @@ suite("Unit Tests", () => {
 			let response = translator.britishToAmerican("Have you met Mrs Kalyani?");
 			let valid = {
 				text: "Have you met Mrs Kalyani?",
-				translation: "Everything looks good to me!",
+				translation: "Have you met <span class=\"highlight\">Mr.</span>s Kalyani?",
 			};
 			assert.deepEqual(response, valid, "working translation");
 		});
@@ -194,7 +194,7 @@ suite("Unit Tests", () => {
 			);
 			let valid = {
 				text: "Prof Joyner of King's College, London.",
-				translation: "Everything looks good to me!",
+				translation: "<span class=\"highlight\">Prof.</span> Joyner of King's College, London.",
 			};
 			assert.deepEqual(response, valid, "working translation");
 		});
@@ -235,7 +235,7 @@ suite("Unit Tests", () => {
 			let valid = {
 				text: "We watched the footie match for a while.",
 				translation:
-					"We watched the <span class='highlight'>soccer</span> match for a while.",
+					"We watched the <span class=\"highlight\">soccer</span> match for a while.",
 			};
 			assert.deepEqual(response, valid, "working translation");
 		});
